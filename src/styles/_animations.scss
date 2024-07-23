@@ -1,0 +1,124 @@
+/* Animation */
+//Transition Property
+//Transition Duration
+//Transition Timing Function
+//Transition Delay
+//Animation
+
+//Transition Property
+@mixin transition-property($property) {
+  transition-property: $property;
+}
+
+@mixin transition($transition) {
+  transition: $transition;
+}
+
+$transitions: (
+  (none, (none, 0s, ease, 0s)),
+  (all, (all, 150ms, cubic-bezier(0.4, 0, 0.2, 1))),
+  (
+    colors,
+    (
+      color,
+      background-color,
+      border-color,
+      text-decoration-color,
+      fill,
+      stroke,
+      150ms,
+      cubic-bezier(0.4, 0, 0.2, 1)
+    )
+  ),
+  (opacity, (opacity, 150ms, cubic-bezier(0.4, 0, 0.2, 1))),
+  (shadow, (box-shadow, 150ms, cubic-bezier(0.4, 0, 0.2, 1))),
+  (transform, (transform, 150ms, cubic-bezier(0.4, 0, 0.2, 1)))
+);
+
+@each $n, $v in $transitions {
+  .transition-#{$n} {
+    @include transition($v);
+  }
+}
+
+// Transitin Duration
+@mixin transition-duration($duration) {
+  transition-duration: $duration;
+}
+
+$transitionDuration: (
+  (0, 0s),
+  (75, 75ms),
+  (100, 100ms),
+  (150, 150ms),
+  (200, 200ms),
+  (300, 300ms),
+  (500, 500ms),
+  (700, 700ms),
+  (1000, 1000ms)
+);
+
+@each $n, $v in $transitionDuration {
+  .duration-#{$n} {
+    @include transition-duration($v);
+  }
+}
+
+// Transition Timing Function
+@mixin transition-timing-function($timing-function) {
+  transition-timing-function: $timing-function;
+}
+
+$transitionTimingFunction: (
+  (ease, cubic-bezier(0.4, 0, 0.2, 1)),
+  (linear, linear),
+  (ease-in, cubic-bezier(0.4, 0, 1, 1)),
+  (ease-out, cubic-bezier(0, 0, 0.2, 1)),
+  (ease-in-out, cubic-bezier(0.4, 0, 0.2, 1))
+);
+
+@each $n, $v in $transitionTimingFunction {
+  .timing-#{$n} {
+    @include transition-timing-function($v);
+  }
+}
+
+// Transition Delay
+@mixin transition-delay($delay) {
+  transition-delay: $delay;
+}
+$transitionDelay: (
+  (0, 0s),
+  (75, 75ms),
+  (100, 100ms),
+  (150, 150ms),
+  (200, 200ms),
+  (300, 300ms),
+  (500, 500ms),
+  (700, 700ms),
+  (1000, 1000ms)
+);
+
+@each $n, $v in $transitionDelay {
+  .delay-#{$n} {
+    @include transition-delay($v);
+  }
+}
+
+// Animation
+@mixin animation($animation) {
+  animation: $animation;
+}
+$animations: (
+  (none, none),
+  (spin, spin 1s linear infinite),
+  (ping, ping 1s cubic-bezier(0, 0, 0.2, 1) infinite),
+  (pulse, pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite),
+  (bounce, bounce 1s infinite)
+);
+
+@each $n, $v in $animations {
+  .animation-#{$n} {
+    @include animation($v);
+  }
+}

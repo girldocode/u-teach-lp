@@ -1,0 +1,142 @@
+/* filters */
+
+//Blur
+//Brightness
+//Contrast
+//Drop Shadow
+//Grayscale
+//Hue Rotate
+//Invert
+//Saturate
+//Sepia
+
+// Blur
+@mixin blur($blur) {
+  backdrop-filter: blur($blur);
+}
+$blur: ((sm, 4), (md, 12), (lg, 16), (xl, 24), ("2xl", 40), ("3xl", 64));
+
+@each $n, $v in $blur {
+  $blursize: #{$v}px;
+  .blur-#{$n} {
+    @include blur($blursize);
+  }
+}
+
+// Brightness
+@mixin brightness($brightness) {
+  backdrop-filter: brightness($brightness);
+}
+
+$brightness: (
+  ("0", 0),
+  ("50", 0.5),
+  ("55", 0.55),
+  ("60", 0.6),
+  ("65", 0.65),
+  ("70", 0.7),
+  ("75", 0.75),
+  ("80", 0.8),
+  ("85", 0.85),
+  ("90", 0.9),
+  ("95", 0.95),
+  ("100", 1),
+  ("105", 1.05),
+  ("110", 1.1),
+  ("125", 1.25),
+  ("150", 1.5),
+  ("200", 2)
+);
+
+@each $n, $v in $brightness {
+  .brightness-#{$n} {
+    @include brightness($v);
+  }
+}
+
+// Contrast
+@mixin contrast($contrast) {
+  backdrop-filter: contrast($contrast);
+}
+$contrast: (
+  ("0", 0),
+  ("50", 0.5),
+  ("75", 0.75),
+  ("100", 1),
+  ("125", 1.25),
+  ("150", 1.5),
+  ("200", 2)
+);
+
+@each $n, $v in $contrast {
+  .contrast-#{$n} {
+    @include contrast($v);
+  }
+}
+
+// Grayscale
+@mixin grayscale($grayscale) {
+  backdrop-filter: grayscale($grayscale);
+}
+$grayscale: ((0, 0), (100, 100%));
+
+@each $n, $v in $grayscale {
+  .grayscale-#{$n} {
+    @include grayscale($v);
+  }
+}
+
+// Hue Rotate
+@mixin hue-rotate($hue-rotate) {
+  backdrop-filter: hue-rotate($hue-rotate);
+}
+$hue-rotate: (
+  ("0", 0deg),
+  ("15", 15deg),
+  ("30", 30deg),
+  ("60", 60deg),
+  ("90", 90deg),
+  ("180", 180deg)
+);
+
+@each $n, $v in $hue-rotate {
+  .hue-rotate-#{$n} {
+    @include hue-rotate($v);
+  }
+}
+
+// Invert
+@mixin invert($invert) {
+  backdrop-filter: invert($invert);
+}
+$invert: ((0, 0), (100, 100%));
+
+@each $n, $v in $invert {
+  .invert-#{$n} {
+    @include invert($v);
+  }
+}
+
+//Saturate
+@mixin saturate($saturate) {
+  backdrop-filter: saturate($saturate);
+}
+$saturate: (("0", 0), ("50", 0.5), ("100", 1), ("150", 1.5), ("200", 2));
+
+@each $n, $v in $saturate {
+  .saturate-#{$n} {
+    @include saturate($v);
+  }
+}
+
+//Sepia
+@mixin sepia($sepia) {
+  backdrop-filter: sepia($sepia);
+}
+$sepia: ((0, 0), (100, 100%));
+
+@each $n, $v in $sepia {
+  .sepia-#{$n} {
+    @include sepia($v);
+  }
+}

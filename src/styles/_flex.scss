@@ -1,0 +1,489 @@
+/* flex */
+//Flex Basis
+//Flex Direction
+//Flex Wrap
+//Flex
+//Flex Grow
+//Flex Shrink
+//Order
+//Gap
+//Justify Content
+//Justify Items
+//Justify Self
+//Align Content
+//Align Items
+//Align Self
+//Place Content
+//Place Items
+//Place Self
+
+$flexbasis: (
+  // 0px
+  (0, 0),
+  //2px
+  ("0-5", 0.125),
+  // 4px
+  (1, 0.25),
+  //6px
+  ("1-5", 0.375),
+  //8px
+  (2, 0.5),
+  //10p
+  ("2-5", 0.625),
+  //12px
+  (3, 0.75),
+  //14px
+  ("3-5", 0.875),
+  // 16px
+  (4, 1),
+  // 20px
+  (5, 1.25),
+  // 24px
+  (6, 1.5),
+  // 28px
+  (7, 1.75),
+  // 32px
+  (8, 2),
+  // 36px
+  (9, 2.25),
+  // 40px
+  (10, 2.5),
+  // 44px
+  (11, 2.75),
+  // 48px
+  (12, 3),
+  //56px
+  (14, 3.5),
+  // 64px
+  (16, 4),
+  // 80px
+  (20, 5),
+  // 96px
+  (24, 6),
+  // 112px
+  (28, 7),
+  // 128px
+  (32, 8),
+  // 144px
+  (36, 9),
+  // 160px
+  (40, 10),
+  // 176px
+  (44, 11),
+  // 192px
+  (48, 12),
+  // 208px
+  (52, 13),
+  // 224px
+  (56, 14),
+  // 240px
+  (60, 15),
+  // 256px
+  (64, 16),
+  // 288px
+  (72, 18),
+  // 320px
+  (80, 20),
+  // 384px
+  (96, 24)
+);
+
+@each $n, $v in $flexbasis {
+  $basisunit: #{$v}rem;
+  .flex-basis-#{$n} {
+    @include flex-basis($basisunit);
+  }
+}
+
+$flexbasispercentages: (
+  (auto, auto),
+  ("1-2", 50%),
+  ("1-3", 33.333333%),
+  ("2-3", 66.666667%),
+  ("1-4", 25%),
+  ("2-4", 50%),
+  ("3-4", 75%),
+  ("1-5", 20%),
+  ("2-5", 40%),
+  ("3-5", 60%),
+  ("4-5", 80%),
+  ("1-6", 16.666667%),
+  ("2-6", 33.333333%),
+  ("3-6", 50%),
+  ("4-6", 66.666667%),
+  ("5-6", 83.333333%),
+  ("1-12", 8.333333%),
+  ("2-12", 16.666667%),
+  ("3-12", 25%),
+  ("4-12", 33.333333%),
+  ("5-12", 41.666667%),
+  ("6-12", 50%),
+  ("7-12", 58.333333%),
+  ("8-12", 66.666667%),
+  ("9-12", 75%),
+  ("10-12", 83.333333%),
+  ("11-12", 91.666667%),
+  (full, full)
+);
+
+@each $n, $v in $flexbasispercentages {
+  .flex-basis-#{$n} {
+    @include flex-basis($v);
+  }
+}
+
+//Flex Direction
+@mixin flex-direction($direction) {
+  flex-direction: $direction;
+}
+$flexdirections: (
+  (row, row),
+  (row-reverse, row-reverse),
+  (column, column),
+  (column-reverse, column-reverse)
+);
+
+@each $n, $v in $flexdirections {
+  .flex-#{$n} {
+    @include flex-direction($v);
+  }
+}
+
+//Flex wrap
+@mixin flex-wrap($wrap) {
+  flex-wrap: $wrap;
+}
+$flexwraps: ((nowrap, nowrap), (wrap, wrap), (wrap-reverse, wrap-reverse));
+
+@each $n, $v in $flexwraps {
+  .flex-wrap-#{$n} {
+    @include flex-wrap($v);
+  }
+}
+
+// Flex
+@mixin flex($flex) {
+  flex: $flex;
+}
+
+$flexValues: (
+  ("1", "1 1 0%"),
+  ("auto", "1 1 auto"),
+  ("initial", "0 1 auto"),
+  ("none", "none")
+);
+@each $n, $v in $flexValues {
+  .flex-#{$n} {
+    @include flex($v);
+  }
+}
+
+//Flex Grow
+@mixin flex-grow($grow) {
+  flex-grow: $grow;
+}
+$flexgrow: ((grow, 0), ("grow-1", 1));
+
+@each $n, $v in $flexgrow {
+  .flex-grow-#{$n} {
+    @include flex-grow($v);
+  }
+}
+
+// Flex shrink
+@mixin flex-shrink($shrink) {
+  flex-shrink: $shrink;
+}
+$flexshrink: ((shrink, 0), ("shrink-1", 1));
+
+@each $n, $v in $flexshrink {
+  .flex-shrink-#{$n} {
+    @include flex-shrink($v);
+  }
+}
+
+//Order
+@mixin order($order) {
+  order: $order;
+}
+$orders: (
+  (1, 1),
+  (2, 2),
+  (3, 3),
+  (4, 4),
+  (5, 5),
+  (6, 6),
+  (7, 7),
+  (8, 8),
+  (9, 9),
+  (10, 10),
+  (11, 11),
+  (12, 12),
+  (first, -9999),
+  (last, 9999),
+  (none, 0)
+);
+
+@each $n, $v in $orders {
+  .order-#{$n} {
+    @include order($v);
+  }
+}
+
+//Gap
+@mixin gap($gap) {
+  gap: $gap;
+}
+
+$gaps: (
+  // 0px
+  (0, 0),
+  //2px
+  ("0-5", 0.125),
+  // 4px
+  (1, 0.25),
+  //6px
+  ("1-5", 0.375),
+  //8px
+  (2, 0.5),
+  //10p
+  ("2-5", 0.625),
+  //12px
+  (3, 0.75),
+  //14px
+  ("3-5", 0.875),
+  // 16px
+  (4, 1),
+  // 20px
+  (5, 1.25),
+  // 24px
+  (6, 1.5),
+  // 28px
+  (7, 1.75),
+  // 32px
+  (8, 2),
+  // 36px
+  (9, 2.25),
+  // 40px
+  (10, 2.5),
+  // 44px
+  (11, 2.75),
+  // 48px
+  (12, 3),
+  //56px
+  (14, 3.5),
+  // 64px
+  (16, 4),
+  // 80px
+  (20, 5),
+  // 96px
+  (24, 6),
+  // 112px
+  (28, 7),
+  // 128px
+  (32, 8),
+  // 144px
+  (36, 9),
+  // 160px
+  (40, 10),
+  // 176px
+  (44, 11),
+  // 192px
+  (48, 12),
+  // 208px
+  (52, 13),
+  // 224px
+  (56, 14),
+  // 240px
+  (60, 15),
+  // 256px
+  (64, 16),
+  // 288px
+  (72, 18),
+  // 320px
+  (80, 20),
+  // 384px
+  (96, 24)
+);
+
+@each $n, $v in $gaps {
+  $value: #{$v}rem;
+  .gap-#{$n} {
+    @include gap($value);
+  }
+}
+
+//Justify Content
+@mixin justify-content($justify) {
+  justify-content: $justify;
+}
+$justifycontent: (
+  (normal, normal),
+  (start, flex-start),
+  (end, flex-end),
+  (center, center),
+  (between, space-between),
+  (around, space-around),
+  (evenly, space-evenly),
+  (stretch, stretch)
+);
+
+@each $n, $v in $justifycontent {
+  .justify-#{$n} {
+    @include justify-content($v);
+  }
+}
+
+//Justify Items
+@mixin justify-items($justify) {
+  justify-items: $justify;
+}
+
+$justifyitems: (
+  (start, flex-start),
+  (end, flex-end),
+  (center, center),
+  (stretch, stretch)
+);
+
+@each $n, $v in $justifyitems {
+  .justify-#{$n} {
+    @include justify-items($v);
+  }
+}
+
+//Justify Self
+@mixin justify-self($justify) {
+  justify-self: $justify;
+}
+
+$justifyself: (
+  (auto, auto),
+  (start, flex-start),
+  (end, flex-end),
+  (center, center),
+  (stretch, stretch)
+);
+
+@each $n, $v in $justifyself {
+  .justify-#{$n} {
+    @include justify-self($v);
+  }
+}
+
+//Align Content
+@mixin align-content($align) {
+  align-content: $align;
+}
+$aligncontent: (
+  (normal, normal),
+  (start, flex-start),
+  (end, flex-end),
+  (center, center),
+  (between, space-between),
+  (around, space-around),
+  (evenly, space-evenly),
+  (baseline, baseline),
+  (stretch, stretch)
+);
+
+@each $n, $v in $aligncontent {
+  .align-#{$n} {
+    @include align-content($v);
+  }
+}
+
+//Align Items
+@mixin align-items($align) {
+  align-items: $align;
+}
+$alignitems: (
+  (start, flex-start),
+  (end, flex-end),
+  (center, center),
+  (baseline, baseline),
+  (stretch, stretch)
+);
+
+@each $n, $v in $alignitems {
+  .align-#{$n} {
+    @include align-items($v);
+  }
+}
+
+//Align Self
+@mixin align-self($align) {
+  align-self: $align;
+}
+$alignself: (
+  (auto, auto),
+  (start, flex-start),
+  (end, flex-end),
+  (center, center),
+  (baseline, baseline),
+  (stretch, stretch)
+);
+
+@each $n, $v in $alignself {
+  .align-#{$n} {
+    @include align-self($v);
+  }
+}
+
+//Place Content
+@mixin place-content($place) {
+  place-content: $place;
+}
+$placecontent: (
+  (normal, normal),
+  (start, flex-start),
+  (end, flex-end),
+  (center, center),
+  (between, space-between),
+  (around, space-around),
+  (evenly, space-evenly),
+  (stretch, stretch)
+);
+
+@each $n, $v in $placecontent {
+  .place-#{$n} {
+    @include place-content($v);
+  }
+}
+
+//Place Items
+@mixin place-items($place) {
+  place-items: $place;
+}
+$placeitems: (
+  (start, flex-start),
+  (end, flex-end),
+  (center, center),
+  (baseline, baseline),
+  (stretch, stretch)
+);
+
+@each $n, $v in $placeitems {
+  .place-#{$n} {
+    @include place-items($v);
+  }
+}
+
+//Place Self
+@mixin place-self($place) {
+  place-self: $place;
+}
+$placeself: (
+  (auto, auto),
+  (start, flex-start),
+  (end, flex-end),
+  (center, center),
+  (baseline, baseline),
+  (stretch, stretch)
+);
+
+@each $n, $v in $placeself {
+  .place-#{$n} {
+    @include place-self($v);
+  }
+}

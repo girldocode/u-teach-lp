@@ -1,0 +1,216 @@
+/* positions */
+// z-index
+
+// position
+// top
+// right
+// bottom
+// left
+// inset
+// inset-x
+// inset-y
+// margin
+// padding
+// space between
+
+$positions: (
+  (static, static),
+  (relative, relative),
+  (absolute, absolute),
+  (fixed, fixed),
+  (sticky, sticky)
+);
+
+@each $n, $p in $positions {
+  .position-#{$n} {
+    position: $p;
+  }
+}
+
+// top / left / bottom / right
+
+$insetvalues: (
+  // 0px
+  (0, 0),
+  //2px
+  ("0-5", 0.125),
+  // 4px
+  (1, 0.25),
+  //6px
+  ("1-5", 0.375),
+  //8px
+  (2, 0.5),
+  //10p
+  ("2-5", 0.625),
+  //12px
+  (3, 0.75),
+  //14px
+  ("3-5", 0.875),
+  // 16px
+  (4, 1),
+  // 20px
+  (5, 1.25),
+  // 24px
+  (6, 1.5),
+  // 28px
+  (7, 1.75),
+  // 32px
+  (8, 2),
+  // 36px
+  (9, 2.25),
+  // 40px
+  (10, 2.5),
+  // 44px
+  (11, 2.75),
+  // 48px
+  (12, 3),
+  //56px
+  (14, 3.5),
+  // 64px
+  (16, 4),
+  // 80px
+  (20, 5),
+  // 96px
+  (24, 6),
+  // 112px
+  (28, 7),
+  // 128px
+  (32, 8),
+  // 144px
+  (36, 9),
+  // 160px
+  (40, 10),
+  // 176px
+  (44, 11),
+  // 192px
+  (48, 12),
+  // 208px
+  (52, 13),
+  // 224px
+  (56, 14),
+  // 240px
+  (60, 15),
+  // 256px
+  (64, 16),
+  // 288px
+  (72, 18),
+  // 320px
+  (80, 20),
+  // 384px
+  (96, 24)
+);
+
+@each $n, $v in $insetvalues {
+  $value: #{$v}rem;
+  .inset-#{$n} {
+    inset: $value;
+  }
+
+  .inset-x-#{$n} {
+    left: $value;
+    right: $value;
+  }
+
+  .inset-y-#{$n} {
+    top: $value;
+    bottom: $value;
+  }
+
+  .start-#{$n} {
+    inset-inline-start: $value;
+  }
+
+  .end-#{$n} {
+    inset-inline-end: $value;
+  }
+
+  .top-#{$n} {
+    top: $value;
+  }
+
+  .right-#{$n} {
+    right: $value;
+  }
+
+  .bottom-#{$n} {
+    bottom: $value;
+  }
+
+  .left-#{$n} {
+    left: $value;
+  }
+}
+$insetpercentage: (
+  ("1-2", 50%),
+  ("48", 48%),
+  ("1-3", 33.333333%),
+  ("2-3", 66.666667%),
+  ("1-4", 25%),
+  ("2-4", 50%),
+  ("3-4", 75%),
+  ("1-5", 20%),
+  ("2-5", 40%),
+  ("3-5", 60%),
+  ("4-5", 80%),
+  ("1-6", 16.666667%),
+  ("2-6", 33.333333%),
+  ("3-6", 50%),
+  ("4-6", 66.666667%),
+  ("5-6", 83.333333%),
+  (full, 100%),
+  ("15per", 15%),
+  ("90per", 90%),
+  ("95per", 95%),
+  ("88-percent", 88%)
+);
+
+@each $n, $v in $insetpercentage {
+  $value: #{$v};
+
+  .inset-#{$n} {
+    inset: $value;
+  }
+  .inset-x-#{$n} {
+    left: $value;
+    right: $value;
+  }
+  .inset-y-#{$n} {
+    top: $value;
+    bottom: $value;
+  }
+  .start-#{$n} {
+    inset-inline-start: $value;
+  }
+  .end-#{$n} {
+    inset-inline-end: $value;
+  }
+  .top-#{$n} {
+    top: $value;
+  }
+  .right-#{$n} {
+    right: $value;
+  }
+  .bottom-#{$n} {
+    bottom: $value;
+  }
+  .left-#{$n} {
+    left: $value;
+  }
+}
+
+// z-index
+$zindex: (
+  (0, 0),
+  (10, 10),
+  (20, 20),
+  (30, 30),
+  (40, 40),
+  (50, 50),
+  (auto, auto)
+);
+
+@each $n, $z in $zindex {
+  .z-#{$n} {
+    z-index: $z;
+  }
+}

@@ -1,0 +1,149 @@
+/* background */
+//Background Attachment
+//Background Clip
+//Background Color
+//Background Image
+//Background Origin
+//Background Position
+//Background Repeat
+//Background Size
+
+//Background Attachment
+@mixin background-attachment($attachment) {
+  background-attachment: $attachment;
+}
+$bgAttachment: ((fixed, fixed), (local, local), (scroll, scroll));
+
+@each $n, $s in $bgAttachment {
+  .bg-#{$n} {
+    @include background-attachment($s);
+  }
+}
+
+//Background Clip
+@mixin background-clip($clip) {
+  background-clip: $clip;
+}
+
+$bgClip: (
+  (border-box, border-box),
+  (content-box, content-box),
+  (padding-box, padding-box),
+  (text, text)
+);
+
+@each $n, $s in $bgClip {
+  .bg-#{$n} {
+    @include background-clip($s);
+  }
+}
+
+//Background Color
+@mixin background-color($color) {
+  background-color: $color;
+}
+$bgColor: ((transparent, transparent), (currentColor, currentColor));
+
+@each $n, $s in $bgColor {
+  .bg-#{$n} {
+    @include background-color($s);
+  }
+}
+
+//Background Image
+@mixin background-image($image) {
+  background-image: $image;
+}
+
+$bgImage: ((none, none), (url, url));
+
+@each $n, $s in $bgImage {
+  .bg-#{$n} {
+    @include background-image($s);
+  }
+}
+
+//Background Origin
+@mixin background-origin($origin) {
+  background-origin: $origin;
+}
+
+$bgOrigin: (
+  (border-box, border-box),
+  (content-box, content-box),
+  (padding-box, padding-box)
+);
+
+@each $n, $s in $bgOrigin {
+  .bg-#{$n} {
+    @include background-origin($s);
+  }
+}
+
+//Background Position
+@mixin background-position($position) {
+  background-position: $position;
+}
+
+$bgPosition: (
+  (bottom, bottom),
+  (center, center),
+  (left, left),
+  (left-bottom, left bottom),
+  (left-top, left top),
+  (right, right),
+  (right-bottom, right bottom),
+  (right-top, right top),
+  (top, top)
+);
+
+@each $n, $s in $bgPosition {
+  .bg-#{$n} {
+    @include background-position($s);
+  }
+}
+
+//Background Repeat
+@mixin background-repeat($repeat) {
+  background-repeat: $repeat;
+}
+
+$bgRepeat: (
+  (no-repeat, no-repeat),
+  (repeat, repeat),
+  (repeat-x, repeat-x),
+  (repeat-y, repeat-y)
+);
+
+@each $n, $s in $bgRepeat {
+  .bg-#{$n} {
+    @include background-repeat($s);
+  }
+}
+
+//Background Size
+@mixin background-size($size) {
+  background-size: $size;
+}
+
+$bgSize: ((auto, auto), (cover, cover), (contain, contain));
+
+@each $n, $s in $bgSize {
+  .bg-#{$n} {
+    @include background-size($s);
+  }
+}
+
+// background
+.bg-url {
+  @include background-image(
+    url("../../public/ionela-mat-clPu7FZ9vio-unsplash.jpg")
+  );
+  @include background-attachment(fixed);
+  @include background-clip(padding-box);
+  @include background-color(#f0f0f0);
+  @include background-origin(border-box);
+  @include background-position(center);
+  @include background-repeat(no-repeat);
+  @include background-size(cover);
+}

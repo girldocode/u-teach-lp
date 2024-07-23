@@ -1,0 +1,275 @@
+/* sizing */
+// width
+// height
+// size: width & height
+// min height
+// max height
+
+//Mixins
+@mixin width($value) {
+  width: $value;
+}
+
+@mixin height($value) {
+  height: $value;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin min-size($min-width, $min-height) {
+  min-width: $min-width;
+  min-height: $min-height;
+}
+
+@mixin max-size($max-width, $max-height) {
+  max-width: $max-width;
+  max-height: $max-height;
+}
+@mixin max-width($value) {
+  max-width: $value;
+}
+@mixin max-height($value) {
+  max-width: $value;
+}
+
+// width , height and size with unit
+$sizeamounts: (
+  // 0px
+  (0, 0),
+  //2px
+  ("0-5", 0.125),
+  // 4px
+  (1, 0.25),
+  //6px
+  ("1-5", 0.375),
+  //8px
+  (2, 0.5),
+  //10p
+  ("2-5", 0.625),
+  //12px
+  (3, 0.75),
+  //14px
+  ("3-5", 0.875),
+  // 16px
+  (4, 1),
+  // 20px
+  (5, 1.25),
+  // 24px
+  (6, 1.5),
+  // 28px
+  (7, 1.75),
+  // 32px
+  (8, 2),
+  // 36px
+  (9, 2.25),
+  // 40px
+  (10, 2.5),
+  // 44px
+  (11, 2.75),
+  // 48px
+  (12, 3),
+  //56px
+  (14, 3.5),
+  // 64px
+  (16, 4),
+  // 80px
+  (20, 5),
+  // 96px
+  (24, 6),
+  // 112px
+  (28, 7),
+  // 128px
+  (32, 8),
+  // 144px
+  (36, 9),
+  // 160px
+  (40, 10),
+  // 176px
+  (44, 11),
+  // 192px
+  (48, 12),
+  // 208px
+  (52, 13),
+  // 224px
+  (56, 14),
+  // 240px
+  (60, 15),
+  // 256px
+  (64, 16),
+  // 288px
+  (72, 18),
+  // 320px
+  (80, 20),
+  // 384px
+  (96, 24)
+);
+
+@each $n, $v in $sizeamounts {
+  $sizeunit: #{$v}rem;
+
+  .w-#{$n} {
+    @include width($sizeunit);
+  }
+
+  .h-#{$n} {
+    @include height($sizeunit);
+  }
+
+  .size-#{$n} {
+    @include size($sizeunit, $sizeunit);
+  }
+}
+
+//  width , height and size , percentage-based
+
+$sizepercentages: (
+  ("1-2", 50%),
+  ("48", 48%),
+  ("1-3", 33.333333%),
+  ("2-3", 66.666667%),
+  ("1-4", 25%),
+  ("2-4", 50%),
+  ("3-4", 75%),
+  ("1-5", 20%),
+  ("2-5", 40%),
+  ("3-5", 60%),
+  ("4-5", 80%),
+  ("1-6", 16.666667%),
+  ("2-6", 33.333333%),
+  ("3-6", 50%),
+  ("4-6", 66.666667%),
+  ("5-6", 83.333333%),
+  (full, 100%),
+  ("15per", 15%),
+  ("90per", 90%),
+  ("95per", 95%),
+  ("88-percent", 88%)
+);
+
+@each $n, $v in $sizepercentages {
+  .w-#{$n} {
+    @include width($v);
+  }
+
+  .h-#{$n} {
+    @include height($v);
+  }
+
+  .size-#{$n} {
+    @include size($v, $v);
+  }
+
+  .min-#{$n} {
+    @include min-size($v, $v);
+  }
+}
+
+// width and height and size,special
+
+$sizespecial: (
+  (none, none),
+  (auto, auto),
+  (min, min-content),
+  (max, max-content),
+  (fit, fit-content),
+  (prose, 65ch),
+  ("screen-sm", 640px),
+  ("screen-md", 768px),
+  ("screen-lg", 1024px),
+  ("screen-xl", 1280px),
+  ("screen-2xl", 1536px)
+);
+
+@each $n, $v in $sizespecial {
+  .w-#{$n} {
+    @include width($v);
+  }
+
+  .h-#{$n} {
+    @include height($v);
+  }
+
+  .size-#{$n} {
+    @include size($v, $v);
+  }
+
+  .min-#{$n} {
+    @include min-size($v, $v);
+  }
+}
+
+//max width and height according to tailwind
+$maxsizeamounts: (
+  (0, 0),
+  (1, 0.25),
+  (2, 0.5),
+  (3, 0.75),
+  (4, 1),
+  (5, 1.25),
+  (6, 1.5),
+  (7, 1.75),
+  (8, 2),
+  (9, 2.25),
+  (10, 2.5),
+  (11, 2.75),
+  (12, 3),
+  (14, 3.5),
+  (16, 4),
+  (20, 5),
+  (24, 6),
+  (28, 7),
+  (32, 8),
+  (36, 9),
+  (40, 10),
+  (44, 11),
+  (48, 12),
+  (52, 13),
+  (56, 14),
+  (60, 15),
+  (64, 16),
+  (72, 18),
+  (80, 20),
+  (96, 24),
+  (xs, 20),
+  (sm, 24),
+  (md, 28),
+  (lg, 32),
+  (xl, 36),
+  (2xl, 42),
+  (3xl, 48),
+  (4xl, 56),
+  (5xl, 64),
+  (6xl, 72),
+  (7xl, 80)
+);
+
+@each $n, $v in $maxsizeamounts {
+  $value: #{$v}rem;
+  .max-w-#{$n} {
+    @include max-width($value);
+  }
+  .max-h-#{$n} {
+    @include max-height($value);
+  }
+}
+
+//max width and height custom
+
+$customheight: ((screen, 100vh), (svh, 100svh), (lvh, 100lvh), (dvh100dvh));
+
+@each $n, $v in $customheight {
+  .max-h-#{$n} {
+    @include max-height($v);
+  }
+}
+
+$customwidth: ((screen, 100vw), (svw, 100svw), (lvw, 100lvw), (dvw100dvw));
+
+@each $n, $v in $customwidth {
+  .max-w-#{$n} {
+    @include max-width($v);
+  }
+}

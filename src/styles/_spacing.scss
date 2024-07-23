@@ -1,0 +1,160 @@
+/* spacing */
+// margins
+// padding
+// space between
+
+$spaceamounts: (
+  // 0px
+  (0, 0),
+  //2px
+  ("0-5", 0.125),
+  // 4px
+  (1, 0.25),
+  //6px
+  ("1-5", 0.375),
+  //8px
+  (2, 0.5),
+  //10p
+  ("2-5", 0.625),
+  //12px
+  (3, 0.75),
+  //14px
+  ("3-5", 0.875),
+  // 16px
+  (4, 1),
+  // 20px
+  (5, 1.25),
+  // 24px
+  (6, 1.5),
+  // 28px
+  (7, 1.75),
+  // 32px
+  (8, 2),
+  // 36px
+  (9, 2.25),
+  // 40px
+  (10, 2.5),
+  // 44px
+  (11, 2.75),
+  // 48px
+  (12, 3),
+  //56px
+  (14, 3.5),
+  // 64px
+  (16, 4),
+  // 80px
+  (20, 5),
+  // 96px
+  (24, 6),
+  // 112px
+  (28, 7),
+  // 128px
+  (32, 8),
+  // 144px
+  (36, 9),
+  // 160px
+  (40, 10),
+  // 176px
+  (44, 11),
+  // 192px
+  (48, 12),
+  // 208px
+  (52, 13),
+  // 224px
+  (56, 14),
+  // 240px
+  (60, 15),
+  // 256px
+  (64, 16),
+  // 288px
+  (72, 18),
+  // 320px
+  (80, 20),
+  // 384px
+  (96, 24)
+);
+
+// margins , padding , space-between
+@each $n, $v in $spaceamounts {
+  $size: #{$v}rem;
+  .m-#{$n} {
+    margin: $size;
+  }
+  .mt-#{$n} {
+    margin-top: $size;
+  }
+  .mr-#{$n} {
+    margin-right: $size;
+  }
+  .mb-#{$n} {
+    margin-bottom: $size;
+  }
+  .ml-#{$n} {
+    margin-left: $size;
+  }
+  .mx-#{$n} {
+    margin-left: $size;
+    margin-right: $size;
+  }
+  .my-#{$n} {
+    margin-top: $size;
+    margin-bottom: $size;
+  }
+  .p-#{$n} {
+    padding: $size;
+  }
+  .pt-#{$n} {
+    padding-top: $size;
+  }
+  .pr-#{$n} {
+    padding-right: $size;
+  }
+  .pb-#{$n} {
+    padding-bottom: $size;
+  }
+  .pl-#{$n} {
+    padding-left: $size;
+  }
+  .px-#{$n} {
+    padding-left: $size;
+    padding-right: $size;
+  }
+  .py-#{$n} {
+    padding-top: $size;
+    padding-bottom: $size;
+  }
+  .gap-#{$n} {
+    gap: $size;
+  }
+  .gap-x-#{$n} {
+    column-gap: $size;
+  }
+  .gap-y-#{$n} {
+    row-gap: $size;
+  }
+}
+
+//margin auto
+.margin-auto {
+  margin: auto;
+}
+.marginx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.marginy-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}

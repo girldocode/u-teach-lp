@@ -1,0 +1,19 @@
+/* img css */
+
+@mixin object-fit($object) {
+  object-fit: $object;
+}
+
+$objectfitvalues: (
+  contain: contain,
+  cover: cover,
+  fill: fill,
+  none: none,
+  scale-down: scale-down,
+);
+
+@each $n, $v in $objectfitvalues {
+  .object-fit-#{$n} {
+    @include object-fit($v);
+  }
+}

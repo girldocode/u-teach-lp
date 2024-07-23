@@ -1,0 +1,157 @@
+@use "./variables" as *;
+
+/* effects */
+
+//box shadow
+//Box Shadow Color
+//opacity
+//mix-blend-mode
+//background-blend-mode
+
+//Box Shadow
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+}
+$boxshadow: (
+  (shadow, 0 1px 3px 0 rgb(0, 0, 0, 0.1), 0 1px 2px -1px rgb(0, 0, 0, 0.1)),
+  (sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05)),
+  (md, 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)),
+  (lg, 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)),
+  (xl, 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)),
+  (
+    2xl,
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04)
+  ),
+  (inner, inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)),
+  (outline, 0 0 0 3px rgba(66, 153, 225, 0.5)),
+  (none, none)
+);
+
+@each $n, $v in $boxshadow {
+  .box-shadow-#{$n} {
+    @include box-shadow($v);
+  }
+}
+
+//Box Shadow Color
+@mixin box-shadow-color($color) {
+  box-shadow-color: $color;
+}
+$boxshadowColor: (
+  "blue-gray-900": $blue-gray-900,
+  "orange-600": $orange-600,
+  "white": $white,
+  "yellow-400": $yellow-400,
+  "blue-600": $blue-600,
+  "blue-100": $blue-100,
+  "blue-800": $blue-800,
+  "blue-gray-600": $blue-gray-600,
+  "purple-100": $purple-100,
+  "purple-800": $purple-800,
+  "green-100": $green-100,
+  "orange-400": $orange-400,
+  "blue-gray-200": $blue-gray-200,
+  "blue-gray-700": $blue-gray-700,
+);
+
+@each $n, $v in $boxshadowColor {
+  .shadow-color-#{$n} {
+    @include box-shadow-color($v);
+  }
+}
+
+//opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+}
+
+$opacity: (
+  ("0", 0),
+  ("5", 0.05),
+  ("10", 0.1),
+  ("15", 0.15),
+  ("20", 0.2),
+  ("25", 0.25),
+  ("30", 0.3),
+  ("35", 0.35),
+  ("40", 0.4),
+  ("45", 0.45),
+  ("50", 0.5),
+  ("55", 0.55),
+  ("60", 0.6),
+  ("65", 0.65),
+  ("70", 0.7),
+  ("75", 0.75),
+  ("80", 0.8),
+  ("85", 0.85),
+  ("90", 0.9),
+  ("95", 0.95),
+  ("100", 1)
+);
+
+@each $n, $v in $opacity {
+  .opacity-#{$n} {
+    @include opacity($v);
+  }
+}
+
+// mix-blend-mode
+@mixin mix-blend-mode($mode) {
+  mix-blend-mode: $mode;
+}
+$mixblendmodes: (
+  ("normal", normal),
+  ("multiply", multiply),
+  ("screen", screen),
+  ("overlay", overlay),
+  ("darken", darken),
+  ("lighten", lighten),
+  ("color-dodge", color-dodge),
+  ("color-burn", color-burn),
+  ("hard-light", hard-light),
+  ("soft-light", soft-light),
+  ("difference", difference),
+  ("exclusion", exclusion),
+  ("hue", hue),
+  ("saturation", saturation),
+  ("color", color),
+  ("luminosity", luminosity),
+  ("plus-darker", plus-darker),
+  ("plus-lighter", plus-lighter)
+);
+
+@each $n, $v in $mixblendmodes {
+  .mix-blend-mode-#{$n} {
+    @include mix-blend-mode($v);
+  }
+}
+
+//background-blend-mode
+@mixin background-blend-mode($mode) {
+  background-blend-mode: $mode;
+}
+$backgroundBlendMode: (
+  ("normal", normal),
+  ("multiply", multiply),
+  ("screen", screen),
+  ("overlay", overlay),
+  ("darken", darken),
+  ("lighten", lighten),
+  ("color-dodge", color-dodge),
+  ("color-burn", color-burn),
+  ("hard-light", hard-light),
+  ("soft-light", soft-light),
+  ("difference", difference),
+  ("exclusion", exclusion),
+  ("hue", hue),
+  ("saturation", saturation),
+  ("color", color),
+  ("luminosity", luminosity)
+);
+
+@each $n, $v in $backgroundBlendMode {
+  .background-blend-mode-#{$n} {
+    @include background-blend-mode($v);
+  }
+}

@@ -1,0 +1,444 @@
+@use "./variables" as *;
+
+/* interactivity */
+
+//Accent Color
+//Appearance
+//Cursor
+//Caret Color
+//Pointer Events
+//Resize
+//Scroll Behavior
+//Scroll Margin
+//Scroll Padding
+//Scroll Snap Align
+//Scroll Snap Stop
+//Scroll Snap Type
+//Touch Action
+//User Select
+//Will Change
+
+//Mixins
+
+//Accent Color
+@mixin accent-color($color) {
+  accent-color: $color;
+}
+
+//Appearance
+@mixin appearance($appearance) {
+  appearance: $appearance;
+}
+
+//Cursor
+@mixin cursor($cursor) {
+  cursor: $cursor;
+}
+
+//Caret Color
+@mixin caret-color($color) {
+  caret-color: $color;
+}
+
+//Pointer Events
+@mixin pointer-events($pointerEvents) {
+  pointer-events: $pointerEvents;
+}
+
+//Resize
+@mixin resize($resize) {
+  resize: $resize;
+}
+
+//Scroll Behavior
+@mixin scroll-behavior($behavior) {
+  scroll-behavior: $behavior;
+}
+
+//Scroll Margin
+@mixin scroll-margin($margin) {
+  scroll-margin: $margin;
+}
+
+//Scroll Padding
+@mixin scroll-padding($padding) {
+  scroll-padding: $padding;
+}
+
+//Scroll Snap Align
+@mixin scroll-snap-align($align) {
+  scroll-snap-align: $align;
+}
+
+//Scroll Snap Stop
+@mixin scroll-snap-stop($stop) {
+  scroll-snap-stop: $stop;
+}
+
+//Scroll Snap Type
+@mixin scroll-snap-type($type) {
+  scroll-snap-type: $type;
+}
+
+//Touch Action
+@mixin touch-action($action) {
+  touch-action: $action;
+}
+
+//User Select
+@mixin user-select($select) {
+  user-select: $select;
+}
+
+//Will Change
+@mixin will-change($change) {
+  will-change: $change;
+}
+
+//Utilities
+
+//Accent Color
+$accentcolor: (
+  "blue-gray-900": $blue-gray-900,
+  "orange-600": $orange-600,
+  "white": $white,
+  "yellow-400": $yellow-400,
+  "blue-600": $blue-600,
+  "blue-100": $blue-100,
+  "blue-800": $blue-800,
+  "blue-gray-600": $blue-gray-600,
+  "purple-100": $purple-100,
+  "purple-800": $purple-800,
+  "green-100": $green-100,
+  "orange-400": $orange-400,
+  "blue-gray-200": $blue-gray-200,
+  "blue-gray-700": $blue-gray-700,
+);
+
+@each $n, $c in $accentcolor {
+  .accent-color-#{$n} {
+    @include accent-color($c);
+  }
+}
+
+//Appearance
+$appearance: (
+  "none": none,
+  "auto": auto,
+);
+@each $n, $c in $appearance {
+  .appearance-#{$n} {
+    @include appearance($c);
+  }
+}
+
+//Cursor
+$cursor: (
+  "auto": auto,
+  "default": default,
+  "pointer": pointer,
+  "wait": wait,
+  "text": text,
+  "move": move,
+  "help": help,
+  "not-allowed": not-allowed,
+  "none": none,
+  "progress": progress,
+);
+@each $n, $c in $cursor {
+  .cursor-#{$n} {
+    @include cursor($c);
+  }
+}
+
+//Caret Color
+$caretcolor: (
+  "transparent": transparent,
+  "blue-gray-900": $blue-gray-900,
+  "orange-600": $orange-600,
+  "white": $white,
+  "yellow-400": $yellow-400,
+  "blue-600": $blue-600,
+  "blue-100": $blue-100,
+  "blue-800": $blue-800,
+  "blue-gray-600": $blue-gray-600,
+  "purple-100": $purple-100,
+  "purple-800": $purple-800,
+  "green-100": $green-100,
+  "orange-400": $orange-400,
+  "blue-gray-200": $blue-gray-200,
+  "blue-gray-700": $blue-gray-700,
+);
+@each $n, $c in $caretcolor {
+  .caret-color-#{$n} {
+    @include caret-color($c);
+  }
+}
+
+//Pointer Events
+$pointerEvents: (
+  "auto": auto,
+  "none": none,
+);
+@each $n, $c in $pointerEvents {
+  .pointer-events-#{$n} {
+    @include pointer-events($c);
+  }
+}
+
+//Resize
+$resize: (
+  "none": none,
+  "both": both,
+  "horizontal": horizontal,
+  "vertical": vertical,
+);
+@each $n, $c in $resize {
+  .resize-#{$n} {
+    @include resize($c);
+  }
+}
+
+//Scroll Behavior
+$scrollBehavior: (
+  "auto": auto,
+  "smooth": smooth,
+);
+@each $n, $c in $scrollBehavior {
+  .scroll-behavior-#{$n} {
+    @include scroll-behavior($c);
+  }
+}
+
+//Scroll Margin
+$scrollMargin: (
+  // 0px
+  (0, 0),
+  //2px
+  ("0-5", 0.125),
+  // 4px
+  (1, 0.25),
+  //6px
+  ("1-5", 0.375),
+  //8px
+  (2, 0.5),
+  //10p
+  ("2-5", 0.625),
+  //12px
+  (3, 0.75),
+  //14px
+  ("3-5", 0.875),
+  // 16px
+  (4, 1),
+  // 20px
+  (5, 1.25),
+  // 24px
+  (6, 1.5),
+  // 28px
+  (7, 1.75),
+  // 32px
+  (8, 2),
+  // 36px
+  (9, 2.25),
+  // 40px
+  (10, 2.5),
+  // 44px
+  (11, 2.75),
+  // 48px
+  (12, 3),
+  //56px
+  (14, 3.5),
+  // 64px
+  (16, 4),
+  // 80px
+  (20, 5),
+  // 96px
+  (24, 6),
+  // 112px
+  (28, 7),
+  // 128px
+  (32, 8),
+  // 144px
+  (36, 9),
+  // 160px
+  (40, 10),
+  // 176px
+  (44, 11),
+  // 192px
+  (48, 12),
+  // 208px
+  (52, 13),
+  // 224px
+  (56, 14),
+  // 240px
+  (60, 15),
+  // 256px
+  (64, 16),
+  // 288px
+  (72, 18),
+  // 320px
+  (80, 20),
+  // 384px
+  (96, 24)
+);
+@each $n, $c in $scrollMargin {
+  $value: #{$c}rem;
+  .scroll-margin-#{$n} {
+    @include scroll-margin($value);
+  }
+}
+
+//Scroll Padding
+$scrollPadding: (
+  // 0px
+  (0, 0),
+  //2px
+  ("0-5", 0.125),
+  // 4px
+  (1, 0.25),
+  //6px
+  ("1-5", 0.375),
+  //8px
+  (2, 0.5),
+  //10p
+  ("2-5", 0.625),
+  //12px
+  (3, 0.75),
+  //14px
+  ("3-5", 0.875),
+  // 16px
+  (4, 1),
+  // 20px
+  (5, 1.25),
+  // 24px
+  (6, 1.5),
+  // 28px
+  (7, 1.75),
+  // 32px
+  (8, 2),
+  // 36px
+  (9, 2.25),
+  // 40px
+  (10, 2.5),
+  // 44px
+  (11, 2.75),
+  // 48px
+  (12, 3),
+  //56px
+  (14, 3.5),
+  // 64px
+  (16, 4),
+  // 80px
+  (20, 5),
+  // 96px
+  (24, 6),
+  // 112px
+  (28, 7),
+  // 128px
+  (32, 8),
+  // 144px
+  (36, 9),
+  // 160px
+  (40, 10),
+  // 176px
+  (44, 11),
+  // 192px
+  (48, 12),
+  // 208px
+  (52, 13),
+  // 224px
+  (56, 14),
+  // 240px
+  (60, 15),
+  // 256px
+  (64, 16),
+  // 288px
+  (72, 18),
+  // 320px
+  (80, 20),
+  // 384px
+  (96, 24)
+);
+@each $n, $c in $scrollPadding {
+  $value: #{$c}rem;
+  .scroll-padding-#{$n} {
+    @include scroll-padding($value);
+  }
+}
+
+//Scroll Snap Align
+$scrollSnapAlign: (
+  ("start", start),
+  ("end", end),
+  ("center", center),
+  ("none", none)
+);
+
+@each $n, $c in $scrollSnapAlign {
+  .scroll-snap-align-#{$n} {
+    @include scroll-snap-align($c);
+  }
+}
+
+//Scroll Snap Stop
+$scrollSnapStop: (("normal", normal), ("always", always));
+@each $n, $c in $scrollSnapStop {
+  .scroll-snap-stop-#{$n} {
+    @include scroll-snap-stop($c);
+  }
+}
+
+//Scroll Snap Type
+$scrollSnapType: (
+  ("none", none),
+  ("x", x),
+  ("y", y),
+  ("mandatory", mandatory),
+  ("proximity", proximity),
+  ("both", both)
+);
+@each $n, $c in $scrollSnapType {
+  .scroll-snap-type-#{$n} {
+    @include scroll-snap-type($c);
+  }
+}
+
+//Touch Action
+$touchAction: (
+  ("auto", auto),
+  ("none", none),
+  ("pan-x", pan-x),
+  ("pan-y", pan-y),
+  ("pinch-zoom", pinch-zoom),
+  ("pan-down", pan-down),
+  ("pan-left", pan-left),
+  ("pan-up", pan-up),
+  ("pan-right", pan-right),
+  ("manipulation", manipulation)
+);
+@each $n, $c in $touchAction {
+  .touch-action-#{$n} {
+    @include touch-action($c);
+  }
+}
+
+//User Select
+$userSelect: (("none", none), ("text", text), ("all", all), ("auto", auto));
+@each $n, $c in $userSelect {
+  .user-select-#{$n} {
+    @include user-select($c);
+  }
+}
+
+//Will Change
+$willChange: (
+  ("auto", auto),
+  ("contents", contents),
+  ("scroll-position", scroll-position),
+  ("transform", transform)
+);
+@each $n, $c in $willChange {
+  .will-change-#{$n} {
+    @include will-change($c);
+  }
+}

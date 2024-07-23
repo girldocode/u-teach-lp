@@ -1,0 +1,116 @@
+/* layout */
+// display
+// container
+// box sizing
+// overlfow
+// scroll css
+// visibility
+
+// display
+@mixin display($display) {
+  display: $display;
+}
+
+// container
+@mixin container($container) {
+  max-width: $container;
+}
+
+// box sizing
+@mixin boxsizing($box-sizing) {
+  box-sizing: $box-sizing;
+}
+
+// overflow
+@mixin overflow($overflow) {
+  overflow: $overflow;
+}
+
+// scroll css
+@mixin overscroll($overscroll) {
+  overscroll-behavior: $overscroll;
+}
+
+// visibility
+@mixin visibility($visibility) {
+  visibility: $visibility;
+}
+
+// display
+$display: (
+  (block, block),
+  (inline, inline),
+  (inline-block, inline-block),
+  (flex, flex),
+  (inline-flex, inline-flex),
+  (grid, grid),
+  (inline-grid, inline-grid),
+  (table, table),
+  (inline-table, inline-table),
+  (table-caption, table-caption),
+  (table-cell, table-cell),
+  (table-column, table-column),
+  (table-column-group, table-column-group),
+  (table-footer-group, table-footer-group),
+  (table-header-group, table-header-group),
+  (table-row, table-row),
+  (table-row-group, table-row-group),
+  (none, none)
+);
+
+@each $n, $d in $display {
+  .display-#{$n} {
+    @include display($d);
+  }
+}
+
+// container
+$container: ((sm, 640), (md, 768), (lg, 1024), (xl, 1280), (2xl, 1536));
+@each $n, $c in $container {
+  $value: #{$c}px;
+  .container-#{$n} {
+    @include container($value);
+  }
+}
+
+// box sizing
+$boxsizing: (("border-box", "border-box"), ("content-box", "content-box"));
+@each $n, $b in $boxsizing {
+  .boxsizing-#{$n} {
+    @include boxsizing($b);
+  }
+}
+
+// overflow
+
+$overflow: (
+  (auto, auto),
+  (hidden, hidden),
+  (visible, visible),
+  (scroll, scroll),
+  (clip, clip),
+  (hidden, hidden)
+);
+
+@each $n, $o in $overflow {
+  .overflow-#{$n} {
+    @include overflow($o);
+  }
+}
+
+// overscroll behavior
+
+$overscroll: ((auto, auto), (contain, contain), (none, none));
+@each $n, $o in $overscroll {
+  .overscroll-#{$n} {
+    @include overscroll($o);
+  }
+}
+
+// visibility
+$visibility: ((visible, visible), (hidden, hidden), (collapse, collapse));
+@each $n, $v in $visibility {
+  .visibility-#{$n} {
+    @include visibility($v);
+  }
+}

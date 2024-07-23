@@ -1,95 +1,43 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 
-export default function Home() {
+export default function Page() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <div className="display-grid grid-cols-2 gap-4 position-relative">
+      <div className="">
+        <h1 className="bg-url navbar-inverse fw-bold spacing-tighter clamp-6 align-right decor-underline transform-uppercase font-serif font-white mt-10 mb-8 px-20">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ipsa
+          suscipit sapiente qui, illo voluptas accusamus repellendus maxime ad
+          perferendis, voluptatem temporibus, saepe repellat unde? Veritatis
+          architecto laboriosam libero et!
+        </h1>
       </div>
 
-      <div className={styles.center}>
+      <div className="border-8 border-solid border-purple-800 border-lg ">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+          vel vitae, soluta mollitia rerum recusandae ratione architecto dolore,
+          non reprehenderit nemo facilis sint modi debitis cum repudiandae
+          commodi ducimus laborum.
+        </p>
+      </div>
+
+      <div className="">
+        <button className="px-4 py-4 min-w-8 min-h-10 max-w-20 max-h-20 w-32 h-20">
+          Click me !!
+        </button>
+      </div>
+
+      <div className="position-absolute top-0 left-0">
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/matt-mutlu-dvGmHwCXlDU-unsplash.jpg"
+          alt="im"
+          width={200}
+          height={200}
         />
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="  box-shadow-2xl shadow-color-orange-400">
+        <h1>hello how are you?</h1>
       </div>
-    </main>
+    </div>
   );
 }
