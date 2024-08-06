@@ -1,0 +1,36 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+.boxList {
+  background-color: #0f172a;
+  &__boxContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 48px;
+    align-items: center;
+    padding: 2rem 2rem;
+    @include lg {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5rem 8rem;
+    }
+  }
+}

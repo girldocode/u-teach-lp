@@ -1,0 +1,64 @@
+.spotlight {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+
+    &__upper {
+      display: flex;
+      margin-bottom: 16px;
+      &__card {
+        overflow: hidden;
+      }
+
+      &__image {
+        position: relative;
+        display: flex;
+        padding-top: 6rem;
+        &__size {
+          width: 100%;
+          height: auto;
+        }
+        &__thumb {
+          position: absolute;
+          top: 164px;
+          right: -37px;
+        }
+      }
+    }
+    &__lower {
+      display: flex;
+      flex-direction: row;
+
+      &__image1 {
+        &__Size {
+          width: 100%;
+          height: auto;
+        }
+      }
+      &__image2 {
+        &__Size {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &__vectorImg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      &__size {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

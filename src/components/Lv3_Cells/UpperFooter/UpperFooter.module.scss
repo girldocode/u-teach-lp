@@ -1,0 +1,97 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+.upperFooter {
+  border-bottom: 0.65px solid #475569;
+  padding: 3rem 0;
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 48px;
+
+    @include md {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__logo {
+    grid-column: span 1;
+
+    @include md {
+      align-self: start;
+    }
+  }
+
+  &__sections {
+    display: grid;
+    gap: 48px;
+
+    @include md {
+      grid-column: span 2;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include lg {
+      grid-column: span 3;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include xl {
+      grid-column: span 4;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__section {
+    &__title {
+      font-size: clamp(14px, 1.5vw, 16px);
+      line-height: 17.6px;
+      margin-bottom: 1.5rem;
+    }
+
+    &__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: #cbd5e1;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__icon {
+      margin-left: 8px;
+    }
+
+    &__text {
+      font-size: clamp(14px, 1.5vw, 16px);
+      line-height: 17.6px;
+    }
+  }
+}

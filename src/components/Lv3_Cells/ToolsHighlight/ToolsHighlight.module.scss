@@ -1,0 +1,288 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+  position: relative;
+
+  @include md {
+    align-items: center;
+    padding: 5rem;
+    padding-bottom: 2.75rem;
+    position: relative;
+  }
+  &__rows {
+    @include md {
+      flex-direction: row;
+      align-items: center;
+    }
+    &--text-container {
+      text-align: left;
+      position: relative;
+      z-index: 1;
+
+      @include md {
+        text-align: center;
+      }
+    }
+    &--image-container {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 1rem;
+      position: relative;
+      z-index: 2;
+
+      @include md {
+        justify-content: center;
+        margin-top: 5rem;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.toolsIcons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 2rem;
+  @include md {
+    display: flex;
+    align-items: center;
+    padding-left: 6rem;
+    padding-right: 7rem;
+    padding-bottom: 5rem;
+  }
+}
+
+// Positioned Images scss
+.positioned {
+  position: absolute;
+  bottom: 121px;
+  right: 23px;
+  z-index: 1;
+
+  @include md {
+    position: absolute;
+    bottom: 182px;
+    right: 140px;
+  }
+
+  &__posImg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.blueVector {
+  position: absolute;
+  top: 10%;
+  right: 0;
+
+  @include md {
+    top: 15%;
+  }
+
+  @include lg {
+    top: 15%;
+  }
+
+  @include xl {
+    top: 10%;
+  }
+
+  &__Img {
+    max-width: 200px;
+
+    @include md {
+      max-width: 250px;
+    }
+
+    @include lg {
+      max-width: 300px;
+    }
+
+    @include xl {
+      max-width: 350px;
+    }
+  }
+}
+
+.yellowVector {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+
+  @include md {
+    bottom: 5%;
+    right: 0%;
+    z-index: 0;
+  }
+
+  @include lg {
+    bottom: 10%;
+    right: 0;
+    z-index: 1;
+  }
+
+  @include xl {
+    bottom: 15%;
+    right: 0;
+    z-index: 1;
+  }
+
+  &__Img {
+    max-width: 100px;
+
+    @include md {
+      max-width: 200px;
+    }
+
+    @include lg {
+      max-width: 360px;
+    }
+
+    @include xl {
+      max-width: 360px;
+    }
+  }
+}
+
+.vector {
+  position: absolute;
+  bottom: -22%;
+  left: 0;
+  z-index: 0;
+
+  @include md {
+    bottom: 5%;
+    left: 0%;
+  }
+
+  @include lg {
+    bottom: 10%;
+    left: 0;
+  }
+
+  @include xl {
+    bottom: 15%;
+    left: 200px;
+  }
+
+  &__Img {
+    max-width: 100px;
+
+    @include md {
+      max-width: 200px;
+    }
+
+    @include lg {
+      max-width: 360px;
+    }
+
+    @include xl {
+      max-width: 360px;
+    }
+  }
+}
+.orangeDots {
+  display: none;
+
+  @include md {
+    display: none;
+  }
+
+  @include lg {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    z-index: 2;
+    display: flex;
+  }
+
+  @include xl {
+    position: absolute;
+    bottom: 15%;
+    left: 100px;
+    z-index: 2;
+    display: flex;
+  }
+
+  &__Img {
+    max-width: 100px;
+
+    @include md {
+      max-width: 200px;
+    }
+
+    @include lg {
+      max-width: 360px;
+    }
+
+    @include xl {
+      max-width: 360px;
+    }
+  }
+}
+.dots {
+  display: none;
+
+  @include md {
+    display: none;
+  }
+
+  @include lg {
+    position: absolute;
+    top: 2%;
+    right: 0;
+    z-index: 2;
+    display: flex;
+  }
+
+  @include xl {
+    position: absolute;
+    top: 2%;
+    right: 0;
+    z-index: 2;
+    display: flex;
+  }
+
+  &__Img {
+    max-width: 100px;
+
+    @include md {
+      max-width: 200px;
+    }
+
+    @include lg {
+      max-width: 360px;
+    }
+
+    @include xl {
+      max-width: 360px;
+    }
+  }
+}

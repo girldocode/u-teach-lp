@@ -1,0 +1,144 @@
+$breakpoints: (
+  "xs": 0,
+  "sm": 640px,
+  "md": 768px,
+  
+  "lg": 1024px,
+  "xl": 1280px,
+  "2xl": 1536px,
+  "3xl": 1700px,
+);
+
+// to target wider screens
+@mixin xs {
+  @media (min-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin xl2 {
+  @media (min-width: map-get($breakpoints, "2xl")) {
+    @content;
+  }
+}
+
+@mixin xl3 {
+  @media (min-width: map-get($breakpoints, "3xl")) {
+    @content;
+  }
+}
+
+@mixin breakpoint($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+// to target narrower screens
+@mixin max-xs {
+  @media not all and (min-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+@mixin max-sm {
+  @media not all and (min-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+@mixin max-md {
+  @media not all and (min-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+@mixin max-lg {
+  @media not all and (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+@mixin max-xl {
+  @media not all and (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+@mixin max-2xl {
+  @media not all and (min-width: map-get($breakpoints, "2xl")) {
+    @content;
+  }
+}
+@mixin max-3xl {
+  @media not all and (min-width: map-get($breakpoints, "3xl")) {
+    @content;
+  }
+}
+@mixin max-breakpoint($bp: 0) {
+  @media not all and (min-width: $bp) {
+    @content;
+  }
+}
+
+// to target a range of screens
+
+@mixin min-xs {
+  @media not all and (max-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+@mixin min-sm {
+  @media not all and (max-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+@mixin min-md {
+  @media not all and (max-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+@mixin min-lg {
+  @media not all and (max-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+@mixin min-xl {
+  @media not all and (max-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+@mixin min-2xl {
+  @media not all and (max-width: map-get($breakpoints, "2xl")) {
+    @content;
+  }
+}
+@mixin min-3xl {
+  @media not all and (max-width: map-get($breakpoints, "3xl")) {
+    @content;
+  }
+}
+@mixin min-breakpoint($bp: 0) {
+  @media not all and (max-width: $bp) {
+    @content;
+  }
+}

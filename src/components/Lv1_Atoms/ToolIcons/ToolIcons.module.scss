@@ -1,0 +1,69 @@
+.tool-icons {
+  &__container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 24px;
+
+    @media (min-width: 768px) {
+      // padding: 0 64px;
+    }
+  }
+
+  &__swiper {
+    .swiper {
+      width: 100%;
+      .swiper-wrapper {
+        display: flex;
+      }
+
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 639px) {
+          width: 100%;
+        }
+
+        @media (min-width: 640px) {
+          width: 25%;
+        }
+
+        @media (min-width: 768px) {
+          width: 20%;
+        }
+
+        @media (min-width: 1024px) {
+          width: 11.11%;
+        }
+      }
+    }
+  }
+
+  &__swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 14px;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__highlight-second-icon .tool-icons__icon-container {
+    border: 3px solid #fb923c;
+  }
+}

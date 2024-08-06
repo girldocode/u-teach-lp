@@ -1,0 +1,36 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+.icon {
+  &__responsive {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    @include lg {
+      display: flex;
+      flex-direction: row;
+    }
+    &__list {
+      display: flex;
+      gap: 1rem;
+      @include md {
+        display: flex;
+        gap: 3rem;
+      }
+    }
+  }
+}

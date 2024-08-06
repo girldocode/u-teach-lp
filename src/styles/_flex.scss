@@ -17,6 +17,11 @@
 //Place Items
 //Place Self
 
+//Flex Basis
+@mixin flex-basis($basis) {
+  flex-basis: $basis;
+}
+
 $flexbasis: (
   // 0px
   (0, 0),
@@ -139,8 +144,8 @@ $flexbasispercentages: (
 $flexdirections: (
   (row, row),
   (row-reverse, row-reverse),
-  (column, column),
-  (column-reverse, column-reverse)
+  (col, column),
+  (col-reverse, column-reverse)
 );
 
 @each $n, $v in $flexdirections {
@@ -406,7 +411,7 @@ $alignitems: (
 );
 
 @each $n, $v in $alignitems {
-  .align-#{$n} {
+  .items-#{$n} {
     @include align-items($v);
   }
 }

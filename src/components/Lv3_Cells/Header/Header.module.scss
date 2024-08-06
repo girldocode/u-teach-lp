@@ -1,0 +1,93 @@
+@use "../../../styles/breakpoints" as *;
+
+.header {
+  &-header {
+    &-responsive {
+      @include lg {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 80px 24px 80px;
+      }
+      display: flex;
+      justify-content: space-between;
+      padding: 24px 18px 24px 18px;
+    }
+  }
+
+  &-logo {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  &-nav {
+    &-responsive {
+      @include lg {
+        display: flex;
+      }
+      display: none;
+    }
+  }
+  &-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    &-responsive {
+      @include lg {
+        display: flex;
+      }
+      display: none;
+    }
+  }
+
+  &-hamburger {
+    &-responsive {
+      @include lg {
+        display: none;
+      }
+      display: flex;
+    }
+  }
+
+  &-mobile-menu {
+    &-responsive {
+      @include lg {
+        display: none;
+      }
+      transition: transform 0.3s ease;
+      transform: translateX(100%);
+
+      &.show {
+        transform: translateX(0);
+      }
+
+      &.hide {
+        transform: translateX(100%);
+      }
+    }
+    &-list {
+      display: flex;
+      flex-direction: column;
+      padding-top: 60px;
+      padding-right: 60px;
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding-left: 16px;
+        color: white;
+        font-size: 1.875rem;
+        font-weight: 600;
+        &-a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}

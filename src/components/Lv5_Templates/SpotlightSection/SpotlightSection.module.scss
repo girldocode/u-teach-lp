@@ -1,0 +1,43 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+.section {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    padding-right: 0;
+    gap: 5rem;
+    @include lg {
+      display: flex;
+      flex-direction: row;
+      padding: 3rem;
+      gap: 5rem;
+    }
+    @include xl {
+      display: flex;
+      flex-direction: row;
+      padding: 5rem;
+      gap: 5rem;
+    }
+    &__left {
+      @include md {
+        padding-top: 6rem;
+      }
+    }
+  }
+}

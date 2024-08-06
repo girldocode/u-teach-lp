@@ -196,7 +196,7 @@ $sizespecial: (
     @include size($v, $v);
   }
 
-  .min-#{$n} {
+  .min-w-#{$n} {
     @include min-size($v, $v);
   }
 }

@@ -1,0 +1,58 @@
+@use "../../../styles/breakpoints" as *;
+
+.hero {
+  &__section {
+    &--responsive {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      gap: 5rem;
+
+      @include lg {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 4rem;
+      }
+
+      &__left {
+        flex: 1;
+        &--sectionTitle {
+          @include lg {
+            margin-top: 2.5rem;
+          }
+          margin-top: 2.5rem;
+        }
+
+        &--icons {
+          @include lg {
+            margin-top: 5rem;
+          }
+          margin-top: 5rem;
+        }
+      }
+
+      &__right {
+        flex: 1;
+        &--lg {
+          @include lg {
+            display: flex;
+            justify-content: center;
+          }
+          display: none;
+        }
+        &--sm {
+          @include lg {
+            display: none;
+          }
+
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.txtBtn {
+  font-size: clamp(14px, 2vw, 20px);
+}

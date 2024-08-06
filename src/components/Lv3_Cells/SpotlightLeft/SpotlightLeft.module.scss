@@ -1,0 +1,36 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+.feature {
+  &__container {
+    &--text-container {
+      &--title {
+        font-size: clamp(24px, 4vw, 56px);
+        margin-bottom: 1.5rem;
+        line-height: 26.4px;
+        @include md {
+          margin-bottom: 2rem;
+          line-height: 61.6px;
+        }
+      }
+      &--desc {
+        font-size: clamp(16px, 2vw, 20px);
+        line-height: 36px;
+      }
+    }
+  }
+}

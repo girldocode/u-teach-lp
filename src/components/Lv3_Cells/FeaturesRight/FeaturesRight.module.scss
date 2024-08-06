@@ -1,0 +1,121 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin xl2 {
+  @media (min-width: 1536px) {
+    @content;
+  }
+}
+
+@mixin xl3 {
+  @media (min-width: 1700px) {
+    @content;
+  }
+}
+
+.featureContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__right {
+    position: relative;
+    width: 100%;
+    max-width: 656px;
+    height: auto;
+
+    &__img {
+      position: relative;
+      z-index: 2;
+      &__size {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__dots {
+      position: absolute;
+      z-index: 2;
+      display: none;
+      @include xl {
+        display: flex;
+        position: absolute;
+        z-index: 2;
+        top: -36px;
+        left: -168px;
+      }
+      &__dotsize {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &__circleImg {
+      position: absolute;
+      top: 25px;
+      left: -34px;
+      z-index: 1;
+      @include md {
+        top: 8px;
+        left: -31px;
+      }
+      @include lg {
+        top: 17px;
+        left: -120px;
+      }
+      &__sizing {
+        width: 72%;
+        height: auto;
+        @include md {
+          width: 88%;
+          height: auto;
+        }
+        @include lg {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &__cardList {
+      position: absolute;
+      z-index: 3;
+      top: 140px;
+      right: 0;
+      width: 100%;
+      padding-bottom: 6rem;
+
+      @include md {
+        top: 254px;
+        right: 0;
+        width: 100%;
+      }
+
+      @include xl {
+        top: 319px;
+        right: 60px;
+        width: 100%;
+      }
+
+      @include lg {
+        top: 254px;
+        right: 64px;
+        width: 100%;
+      }
+    }
+  }
+}

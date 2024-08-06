@@ -12,6 +12,7 @@
 // fluid sizing
 // font family
 // color
+//Font Style
 
 // font size & line-height
 @mixin font-size($size) {
@@ -73,7 +74,7 @@ $weight: (
   (semibold, 600),
   (bold, 700),
   (extrabold, 800),
-  (fontBlack, 900)
+  (black, 900)
 );
 
 @each $n, $w in $weight {
@@ -103,22 +104,6 @@ $letterSpacing: (
   }
 }
 
-// line clamp
-@mixin line-clamp($lines) {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: $lines;
-}
-
-$lineclamps: ((1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6));
-
-@each $n, $c in $lineclamps {
-  .clamp-#{$n} {
-    @include line-clamp($c);
-  }
-}
-
 // text align
 @mixin text-align($align) {
   text-align: $align;
@@ -128,7 +113,9 @@ $textAlign: (
   (left, left),
   (center, center),
   (right, right),
-  (justify, justify)
+  (justify, justify),
+  (start, start),
+  (end, end)
 );
 
 @each $n, $a in $textAlign {
@@ -137,7 +124,7 @@ $textAlign: (
   }
 }
 
-// text decore
+// text decor
 @mixin text-decoration($decoration) {
   text-decoration: $decoration;
 }
@@ -229,6 +216,7 @@ $colors: (
   "purple-100": $purple-100,
   "purple-800": $purple-800,
   "green-100": $green-100,
+  "green-800": $green-800,
   "orange-400": $orange-400,
   "blue-gray-200": $blue-gray-200,
   "blue-gray-700": $blue-gray-700,
@@ -237,5 +225,85 @@ $colors: (
 @each $n, $v in $colors {
   .font-#{$n} {
     @include color($v);
+  }
+}
+
+//Font Style
+@mixin font-style($style) {
+  font-style: $style;
+}
+$fontStyle: ((normal, normal), (italic, italic));
+@each $n, $s in $fontStyle {
+  .font-#{$n} {
+    @include font-style($s);
+  }
+}
+
+//fluid sizing
+$clamp-values: (
+  (xs, (0.75rem, 2vw, 1rem)),
+  (sm, (0.875rem, 2vw, 1.25rem)),
+  (base, (1rem, 2vw, 1.5rem)),
+  (lg, (1.125rem, 2vw, 1.75rem)),
+  (xl, (1.25rem, 2vw, 2rem)),
+  (2xl, (1.5rem, 2vw, 2.5rem)),
+  (3xl, (1.875rem, 2vw, 3rem)),
+  (4xl, (2.25rem, 2vw, 3.5rem)),
+  (5xl, (3rem, 2vw, 4.5rem)),
+  (6xl, (3.75rem, 2vw, 6rem)),
+  (7xl, (4.5rem, 2vw, 7.5rem))
+);
+
+// _mixins.scss
+@mixin clamp($min, $preferred, $max) {
+  font-size: clamp(#{$min}, #{$preferred}, #{$max});
+}
+@each $size, $values in $clamp-values {
+  $min: nth($values, 1);
+  $preferred: nth($values, 2);
+  $max: nth($values, 3);
+
+  .fluid-text-#{$size} {
+    @include clamp($min, $preferred, $max);
+  }
+}
+
+// Vertical align
+
+@mixin vertical-align($align) {
+  vertical-align: $align;
+}
+
+$vertical-align: (
+  (baseline, baseline),
+  (sub, sub),
+  (super, super),
+  (top, top),
+  (text-top, text-top),
+  (middle, middle),
+  (bottom, bottom),
+  (text-bottom, text-bottom)
+);
+
+@each $n, $a in $vertical-align {
+  .vertical-align-#{$n} {
+    @include vertical-align($a);
+  }
+}
+
+//line clamp
+
+@mixin line-clamp($clamp) {
+  display: -webkit-box;
+  -webkit-line-clamp: $clamp;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+$lineClamp: ((1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (none, none));
+
+@each $n, $c in $lineClamp {
+  .line-clamp-#{$n} {
+    @include line-clamp($c);
   }
 }

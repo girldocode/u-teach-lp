@@ -1,0 +1,50 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 36px;
+    padding-left: 10px;
+    padding-right: 10px;
+    @include xl {
+      padding-left: 60px;
+      gap: 36px;
+      padding-right: 60px;
+    }
+    &__image {
+      margin-bottom: 15px;
+      &__sizes {
+        width: 64px;
+        height: 64px;
+      }
+    }
+    &__number {
+      margin-bottom: 10px;
+    }
+
+    &__label {
+      font-size: clamp (16px, 2vw, 24px);
+    }
+  }
+}

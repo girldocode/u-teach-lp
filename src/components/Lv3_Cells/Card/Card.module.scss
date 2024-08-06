@@ -1,0 +1,28 @@
+.text {
+  &__title {
+    font-size: clamp(16px, 4vw, 20px);
+    padding-top: 1rem;
+
+    padding-bottom: 0.75rem;
+    line-height: 22px;
+  }
+  &__desc {
+    font-size: clamp(12px, 2vw, 14px);
+    line-height: 19.6px;
+
+    padding-bottom: 1rem;
+  }
+}
+
+.card {
+  &__container {
+    padding: 1rem;
+    max-width: 200.33px;
+    height: 232px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.07),
+      0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,0 +1,59 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+.carousal {
+  &__container {
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      padding: 5rem;
+      &__title {
+        font-size: clamp(24px, 4vw, 56px);
+      }
+      &__icons {
+        display: none;
+
+        @include md {
+          display: flex;
+          gap: 1.5rem;
+        }
+        &__left {
+          background: white;
+          border: 2px solid #ea580c;
+          border-radius: 100px;
+          padding: 12px 14px;
+          cursor: pointer;
+        }
+        &__right {
+          background: white;
+          border: 2px solid #ea580c;
+          border-radius: 100px;
+          padding: 12px 14px;
+          cursor: pointer;
+        }
+      }
+    }
+    &__cards {
+      padding-bottom: 5rem;
+
+      @include xl {
+        padding-left: 5rem;
+        padding-bottom: 5rem;
+      }
+    }
+  }
+}
