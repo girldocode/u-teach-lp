@@ -11,6 +11,8 @@ import {
   UserStats,
 } from "@/components";
 
+import { testimonialCardData } from "./data/app.data";
+
 export default function Page() {
   return (
     <div>
@@ -20,7 +22,7 @@ export default function Page() {
       <AppFeatures />
       <MeetUp />
       <UserStats />
-      <TestimonialCarousel />
+      <TestimonialCarousel data={testimonialCardData} />
       <SpotlightSection />
       <JoinLearning />
       <Footer />
